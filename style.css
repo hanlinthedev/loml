@@ -1,0 +1,318 @@
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap");
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	background-color: #f2f2f2;
+	min-height: 100vh;
+	background-color: #f471be20;
+}
+body.fullscreen-view {
+	overflow: hidden;
+}
+
+h1,
+h2,
+h3 {
+	font-family: "Dancing Script", cursive;
+}
+
+header {
+	padding-block: 32px;
+	text-align: center;
+	background-color: #333;
+	background: linear-gradient(to right, white, #ffe4e6, white);
+}
+
+header > h1 {
+	/* text-4xl md:text-5xl font-bold text-gray-800 mb-4 */
+	font-size: 48px;
+	font-weight: bold;
+	color: #333;
+	margin-bottom: 16px;
+}
+
+header > div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+}
+
+header > div > p {
+	/* text-lg md:text-xl text-gray-600 italic */
+	font-size: 18px;
+	color: #333;
+	font-style: italic;
+}
+
+header > div > i {
+	font-size: 24px;
+	color: #f471be;
+}
+
+/* Main page container */
+.couple-page {
+	min-height: 100vh;
+	display: flex;
+	flex-direction: column;
+}
+
+/* Header styles */
+.header {
+	padding: 4rem 2rem;
+	text-align: center;
+	background: linear-gradient(135deg, #ffffff, #fce7f3);
+}
+
+.header h1 {
+	font-family: var(--font-dancing-script), cursive;
+	font-size: 3.5rem;
+	color: #333;
+	margin-bottom: 1rem;
+}
+
+.header p {
+	font-size: 1.2rem;
+	color: #666;
+	font-style: italic;
+}
+
+/* Main timeline container with blur gradient background */
+.timeline-container {
+	position: relative;
+	margin: 0 auto;
+	padding: 3rem 2rem;
+	flex: 1;
+	background: radial-gradient(
+		rgba(255, 255, 255, 0.9),
+		rgba(252, 231, 243, 0.9)
+	);
+	backdrop-filter: blur(10px);
+}
+
+.placeholder {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	animation: placeholder 2s cubic-bezier(0.1, -0.6, 0.2, 0) infinite alternate;
+	margin-block: 64px;
+}
+
+.placeholderr > img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+/* border: 4px solid #f472b6; */
+.byDay {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.byDay > i {
+	font-size: 2rem;
+	color: #f471be;
+	margin-block: 1rem;
+}
+.media-grid {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	/* flex-wrap: nowrap; */
+	max-width: 400px;
+	justify-content: center;
+
+	gap: 1rem;
+}
+/* Date styling */
+.date {
+	display: inline-block;
+	padding: 0.4rem 1rem;
+	background: #fce7f3;
+	color: #ec4899;
+	border-radius: 20px;
+	font-size: 1rem;
+	font-weight: 500;
+	letter-spacing: 0.3rem;
+	margin-bottom: 0.8rem;
+	font-family: "Dancing Script", cursive;
+}
+
+#media-container {
+	max-width: 1200px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+img,
+video {
+	max-width: 100%;
+	height: auto;
+	vertical-align: middle;
+}
+
+img:hover,
+video:hover {
+	transform: scale(1.05);
+	transition: transform 0.3s ease-in-out;
+}
+
+.media-grid > div:hover {
+	transform: scale(1.05);
+	transition: transform 0.3s ease-in-out;
+}
+/* Footer styles */
+.footer {
+	padding: 2rem;
+	text-align: center;
+	background: linear-gradient(135deg, #ffffff, #fce7f3);
+}
+
+.hearts {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	margin-bottom: 1rem;
+}
+
+.fa-heart {
+	font-size: 1.2rem;
+	animation: pulse 2s infinite;
+}
+
+.heart.large {
+	font-size: 1.5rem;
+	animation-delay: 0.5s;
+}
+
+@keyframes pulse {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.2);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+	.timeline-container::after {
+		left: 31px;
+	}
+
+	.timeline-item {
+		width: 100%;
+		padding-left: 70px;
+		padding-right: 25px;
+	}
+
+	.timeline-item.right {
+		left: 0;
+	}
+
+	.timeline-item.left::after,
+	.timeline-item.right::after {
+		left: 21px;
+	}
+
+	.header h1 {
+		font-size: 2.5rem;
+	}
+}
+
+footer {
+	/* py-8 text-center bg-gradient-to-r from-white via-pink-50 to-white; */
+	text-align: center;
+	background: linear-gradient(to right, white, #ffe4e6, white);
+	padding-block: 24px;
+	display: block;
+	margin-top: auto;
+	position: sticky;
+	width: 100%;
+	bottom: 0;
+}
+
+footer > div {
+	/* flex justify-center items-center gap-3 mb-4 */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 12px;
+	margin-bottom: 16px;
+}
+
+footer > div > i {
+	font-size: 20px;
+	color: #f471be;
+}
+footer > p {
+	color: oklch(0.446 0.03 256.802);
+	font-size: 24px;
+	font-weight: 500;
+	font-family: "Dancing Script", cursive;
+}
+footer > div > i:nth-child(2) {
+	font-size: 24px;
+}
+
+.floating-hearts-container {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	pointer-events: none;
+	z-index: 9999;
+	overflow: hidden;
+}
+
+.floating-heart {
+	position: absolute;
+	bottom: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: #ff4081;
+	animation-name: floatUp;
+	animation-timing-function: linear;
+	animation-fill-mode: forwards;
+	transform: translateX(-50%);
+	opacity: 0;
+}
+
+@keyframes floatUp {
+	0% {
+		opacity: 1;
+		transform: translateX(-50%) translateY(0);
+	}
+	100% {
+		transform: translateX(-50%) translateY(-200vh);
+		opacity: 0;
+	}
+}
+
+@keyframes placeholder {
+	0% {
+		opacity: 0.9;
+		transform: scale(0.8);
+	}
+	50% {
+		opacity: 0.8;
+		transform: scale(1.1);
+	}
+	100% {
+		opacity: 0.9;
+		transform: scale(0.8);
+	}
+}
